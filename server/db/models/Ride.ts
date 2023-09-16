@@ -25,7 +25,6 @@ const RideSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-
   rideDepartureTime: {
     type: Date,
     required: true,
@@ -42,3 +41,7 @@ const RideSchema = new mongoose.Schema({
     type: [mongoose.Schema.Types.ObjectId],
   },
 });
+
+const Ride = mongoose.model("User", RideSchema);
+
+module.exports = { Ride };

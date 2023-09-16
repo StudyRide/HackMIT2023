@@ -1,13 +1,6 @@
 import express, { Express, Request, Response, Application } from "express";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
-
-// const ConnectDB = require("./db/conn");
-
-// import db from "./db/conn";
-
-//For env File
-dotenv.config();
+import { User } from "./db/models/User";
 
 const app: Application = express();
 const port = process.env.PORT || 8000;
@@ -17,12 +10,12 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 const connString =
-  "mongodb+srv://HackMIT2023:2a9xIW3TbzYUFcxk@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://HackMIT2023:pGnJYUneesMv2oKw@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
 
 const start = async () => {
   try {
     await mongoose.connect(connString);
-    app.listen(port, () => console.log("Server started on port 3000"));
+    app.listen(port, () => console.log(`Server started on port ${port}`));
   } catch (error) {
     console.error(error);
     process.exit(1);
@@ -30,3 +23,5 @@ const start = async () => {
 };
 
 start();
+
+console.log();

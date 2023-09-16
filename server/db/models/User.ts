@@ -21,3 +21,7 @@ const UserSchema = new mongoose.Schema({
     type: [mongoose.Schema.Types.ObjectId],
   },
 });
+
+const User = mongoose.model("User", UserSchema);
+
+module.exports = { User };
