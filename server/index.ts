@@ -17,7 +17,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 const connString =
-  "mongodb+srv://HackMIT2023:WCtlrWURq9DzZna7@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://HackMIT2023:2a9xIW3TbzYUFcxk@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
 
 async function ConnectDb() {
   await mongoose.connect(connString);
