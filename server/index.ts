@@ -5,9 +5,11 @@ import { User } from "./db/models/User";
 const app: Application = express();
 const port = process.env.PORT || 8000;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to Express & TypeScript Server");
-});
+// app.get("/", (req: Request, res: Response) => {
+//   res.send("Welcome to Express & TypeScript Server");
+// });
+
+app.post("/create-user", (req: Request, res: Response) => {});
 
 const connString =
   "mongodb+srv://HackMIT2023:pGnJYUneesMv2oKw@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
@@ -24,4 +26,4 @@ const start = async () => {
 
 start();
 
-console.log();
+console.log(User.findAll());
