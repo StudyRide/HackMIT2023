@@ -19,10 +19,6 @@ app.get("/", (req: Request, res: Response) => {
 const connString =
   "mongodb+srv://HackMIT2023:2a9xIW3TbzYUFcxk@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
 
-async function ConnectDb() {
-  await mongoose.connect(connString);
-}
-
 const start = async () => {
   try {
     await mongoose.connect(connString);
@@ -34,6 +30,3 @@ const start = async () => {
 };
 
 start();
-// app.listen(port, () => {
-//   console.log(`Server is Fire at http://localhost:${port}`);
-// });
