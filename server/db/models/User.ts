@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
@@ -22,6 +18,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("User", UserSchema, "Users");
+const User: mongoose.Model<any> = mongoose.model("User", UserSchema, "users");
 
 export { User };

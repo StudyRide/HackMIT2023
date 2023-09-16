@@ -1,10 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const RideSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
-    required: true,
-  },
   driver: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
@@ -42,6 +38,6 @@ const RideSchema = new mongoose.Schema({
   },
 });
 
-const Ride = mongoose.model("User", RideSchema, "Rides");
+const Ride: mongoose.Model<any> = mongoose.model("Ride", RideSchema, "Rides");
 
 export { Ride };
