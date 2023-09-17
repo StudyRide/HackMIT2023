@@ -14,8 +14,9 @@ function RidesComponent(){
         .then((res) => res.json())
         .then((data) => setRides(data));
     }, []);
+
     return(
-        <div>
+        <div className="divide-y divide-gray-100 mt-5">
         {rides.map((ride) => (
             <RideCard key={ride.id} ride={ride} />
             // <div key={ride.id}>

@@ -3,11 +3,10 @@
 /* Section container styles */
 .main-container-1 {
     display: flex;
-    background-color: #0D5C63;
     justify-content: center;
     align-items: center;
     padding: 10%;
-    height: auto; /* Center the content vertically in the viewport */
+    height: 20vh; /* Center the content vertically in the viewport */
   }
 
   

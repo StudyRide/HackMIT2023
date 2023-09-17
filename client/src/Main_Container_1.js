@@ -8,9 +8,9 @@ function Main_Container_1() {
 
 
   return (
-    <div className="main-container-1">
+    <div className="main-container-1 bg-emerald-700">
       <div className="centered-content">
-        <h2 className="search-hook">Find Your Next Shared Ride!</h2>
+        <h2 className="search-hook font-">Find Your Next Shared Ride!</h2>
         <input type="text" className="search-bar" placeholder="Search for a ride" />
         <button className="start-ride-button">Start</button>
       </div>
