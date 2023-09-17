@@ -1,8 +1,15 @@
 import React from 'react';
 import Navbar from './Navbar.js';
+import ProfileInfo from './ProfileInfo.js';
 
 function PersonDash() {
     return(
-        <Navbar />
+        <div className="person-dash">
+            <Navbar />
+            <ProfileInfo />
+        </div>
+        
     );
 }
+
+export default PersonDash;

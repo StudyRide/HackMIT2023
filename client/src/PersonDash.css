@@ -1,0 +1,7 @@
+.person-dash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15%;
+    height: auto; /* Center the content vertically in the viewport */
+  }

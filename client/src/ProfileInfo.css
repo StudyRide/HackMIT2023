@@ -1,0 +1,49 @@
+/* ProfileInfo.css */
+
+/* Profile info container styles */
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #0D5C63;
+    padding: 100px;
+    padding-left: 350px;
+    padding-right: 350px;
+  }
+  
+  /* Profile picture styles */
+  .profile-picture {
+    width: 200px; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    border-radius: 50%; /* Make it round for a profile picture */
+    margin-right: 20px;
+  }
+  
+  /* Profile details styles */
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFFA;
+  }
+  
+  .name {
+    font-size: 34px;
+  }
+  
+  /* Offer ride button styles */
+  .offer-ride-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFFFFA;;
+    color: #0D5C63;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect on the button */
+  .offer-ride-button:hover {
+    background-color: #cdf5f8;
+  }
+  

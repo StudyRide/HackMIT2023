@@ -1,8 +1,9 @@
 import React from 'react';
+import PersonDash from '../PersonDash';
 
 function DashboardPage(){
     return (
-        <p>dashboard</p>
+        <PersonDash />     
     )
 }
 export default DashboardPage;
