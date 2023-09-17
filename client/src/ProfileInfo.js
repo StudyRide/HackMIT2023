@@ -21,7 +21,7 @@ function ProfileInfo() {
     <div className="profile-info bg-emerald-900">
       <img src={profilePic} alt="Profile" className="profile-picture" />
       <div className="profile-details">
-        <h2 className="name">Mary Jane</h2>
+        <h2 className="name">Kate</h2>
         <p className="wallet">Wallet: $10</p>
         <button className="offer-ride-button" onClick={handleOpenDialog}>
           Offer Ride

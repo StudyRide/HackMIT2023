@@ -18,40 +18,6 @@
   align-items: center; /* Center items horizontally */
 }
 
-<<<<<<< HEAD
-/* Search hook styles */
-.search-hook {
-  color: #fffffa;
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-/* Search bar styles */
-.search-bar {
-  background-color: #fffffa;
-  color: #0d5c63;
-  padding: 10px;
-  font-size: 16px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-
-/* Start ride button styles */
-.start-ride-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #fffffa;
-  color: #064e3b;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Hover effect on the button */
-.start-ride-button:hover {
-  background-color: #cdf5f8;
-}
-=======
   /* Search hook styles */
   .search-hook {
     color:#FFFFFA;
@@ -89,4 +55,3 @@
     background-color: #cdf5f8;
   }
   
->>>>>>> 8a339e066f65c9f01bff857e6a02967c7ae01f71
