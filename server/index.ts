@@ -13,11 +13,49 @@ const port = process.env.PORT || 8000;
 app.post("/create-user", (req: Request, res: Response) => {});
 
 app.get("/", (req: Request, res: Response) => {
-  console.log("Started definitely");
-  const allRides = Ride.find();
-  res.send({
-    allRides: allRides,
+  res.send(
+    "Good evening!"
+  );
+});
+
+app.get('/getRides', (req: Request, res: Response) => {
+  Ride.find({})
+    .then((rides) => {
+        res.json(rides);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('An error occurred while trying to get rides');
+    });
+});
+
+app.get('/getUsers', (req: Request, res: Response) => {
+  User.find({})
+    .then((rides) => {
+        res.json(rides);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('An error occurred while trying to get userss');
+    });
+})
+
+app.post('/createRide', (req, res) => {
+  const newRide = new Ride({
+      driver: req.body.driver,
+      capacity: req.body.capacity,
+      origin: req.body.origin,
+      destination: req.body.destination,
+      timeOfCreation: new Date(),
+      rideDepartureTime: req.body.rideDepartureTime,
+      rideReturnTime: req.body.rideReturnTime,
+      cost: req.body.cost,
+      requests: []
   });
+  newRide.save()
+      .then(() => res.json('Ride created!'))
+      // @ts-ignore
+      .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 const connString =
