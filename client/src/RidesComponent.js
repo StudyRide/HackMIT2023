@@ -5,25 +5,25 @@ import './RidesComponent.css';
 
 function RidesComponent(){
     const [rides, setRides] = useState([]);
+
     useEffect(() => {
-        fetch('/getRides')
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            setRides(data);
-        })
-        .catch((err) => {
-            console.log(err.message);
-        })
-    });
+      fetch('http://localhost:4242/getRides', {
+        method: "GET",
+        mode: "cors"
+      })
+        .then((res) => res.json())
+        .then((data) => setRides(data));
+    }, []);
     return(
-        <div class="Ride-Card">
-            <div class="card-body">
-                {rides.map(ride => (
-                    <RideCard origin={ride.origin} ride={ride}/>
-                ))}  
-            </div>
+        <div>
+        {rides.map((ride) => (
+            <RideCard key={ride.id} ride={ride} />
+            // <div key={ride.id}>
+            //   {/* Output the entire ride object */}
+            //   {JSON.stringify(ride.destination)}
+            // </div>
+          ))}
         </div>
-    );
+    )
 }
 export default RidesComponent;
