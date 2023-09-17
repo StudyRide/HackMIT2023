@@ -4,17 +4,19 @@ import { User } from "./db/models/User";
 import { Ride } from "./db/models/Ride";
 
 const app: Application = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 4242;
 
-// app.get("/", (req: Request, res: Response) => {
-//   res.send("Welcome to Express & TypeScript Server");
-// });
+const connString =
+  "mongodb+srv://ebondare:eZWqUiDAyhltnqfC@studyride-cluster.c55hbb6.mongodb.net/";
+
+//eZWqUiDAyhltnqfC
 
 app.post("/createUser", (req: Request, res: Response) => {
+  console.log(req.query);
   const newUser = new User({
-    name: req.body.name,
-    email: req.body.email,
-    phoneNumber: req.body.phoneNumber,
+    name: req.query.name,
+    email: req.query.email,
+    phoneNumber: req.query.phoneNumber,
     confirmedRides: []
   });
   newUser.save()
@@ -51,16 +53,17 @@ app.get('/getUsers', (req: Request, res: Response) => {
     });
 })
 
+
 app.post('/createRide', (req, res) => {
   const newRide = new Ride({
-      driver: req.body.driver,
-      capacity: req.body.capacity,
-      origin: req.body.origin,
-      destination: req.body.destination,
+      driver: req.query.driver,
+      capacity: req.query.capacity,
+      origin: req.query.origin,
+      destination: req.query.destination,
       timeOfCreation: new Date(),
-      rideDepartureTime: req.body.rideDepartureTime,
-      rideReturnTime: req.body.rideReturnTime,
-      cost: req.body.cost,
+      rideDepartureTime: req.query.rideDepartureTime,
+      rideReturnTime: req.query.rideReturnTime,
+      cost: req.query.cost,
       requests: []
   });
   newRide.save()
@@ -69,8 +72,6 @@ app.post('/createRide', (req, res) => {
       .catch((err) => res.status(400).json('Error: ' + err));
 });
 
-const connString =
-  "mongodb+srv://HackMIT2023:pGnJYUneesMv2oKw@hackmit-cluster.4p9wi1v.mongodb.net/?retryWrites=true&w=majority";
 
 const start = async () => {
   try {
@@ -84,18 +85,18 @@ const start = async () => {
 
 start();
 
-console.log(
-  User.create({
-    email: "hi@gmail.com",
-    name: "thisIsAName",
-    phoneNumber: "123.456.7890",
-  }).then((res) => {
-    res;
-  }),
+// console.log(
+//   User.create({
+//     email: "hi@gmail.com",
+//     name: "thisIsAName",
+//     phoneNumber: "123.456.7890",
+//   }).then((res) => {
+//     res;
+//   }),
 
-  User.find({})
-    .exec()
-    .then((res) => {
-      console.log(res);
-    })
-);
+//   User.find({})
+//     .exec()
+//     .then((res) => {
+//       console.log(res);
+//     })
+// );
