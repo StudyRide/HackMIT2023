@@ -11,6 +11,8 @@ function RideCard(props){
             <p>Origin: {ride.origin}</p>
             <p>Destination: {ride.destination}</p>
             <p>Driver: {ride.driver}</p>
+            <p>Cost: {ride.cost}</p>
+            <p>Departure: {ride.rideDepartureTime}</p>
         </div>
     )
 }
