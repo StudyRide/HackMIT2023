@@ -15,34 +15,46 @@ function OfferRideDialog({ isOpen, onClose }) {
 
   const fields = [
     {
-      name: "Origin",
+      name: "Origin*",
       value: origin,
       updateInput: setOrigin,
+      type: "text"
     },
     {
-      name: "Destination",
+      name: "Destination*",
       value: destination,
       updateInput: setDestination,
+      type: "text"
+
     },
     {
-      name: "Departure Time",
+      name: "Departure Time*",
       value: depTime,
       updateInput: setDepTime,
+      type: "time"
+
     },
     {
-      name: "Return Time",
+      name: "Return Time*",
       value: retTime,
       updateInput: setRetTime,
+      type: "time"
+
+      
     },
     {
-      name: "Cost",
+      name: "Cost / Person*",
       value: cost,
       updateInput: setCost,
+      type: "number"
+
     },
     {
-      name: "Capacity",
+      name: "Capacity*",
       value: capacity,
       updateInput: setCapacity,
+      type: "number"
+
     },
   ];
 
@@ -68,7 +80,12 @@ function OfferRideDialog({ isOpen, onClose }) {
     axios
       .post("http://localhost:4242/createRide", data, { header: headers })
       .then((res) => toast.success(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        toast.error(
+          "Unable to create ride. Ensure all required values are specified"
+        );
+        console.log(err.response.data);
+      });
 
     // Close the dialog
     onClose();
@@ -87,7 +104,7 @@ function OfferRideDialog({ isOpen, onClose }) {
           <div className="input-boxes">
             <label htmlFor={field.name}>{field.name}</label>
             <input
-              type="text"
+              type={field.type}
               id={field.name}
               value={field.value}
               onChange={(e) => field.updateInput(e.target.value)}

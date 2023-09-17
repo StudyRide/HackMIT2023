@@ -22,11 +22,11 @@ const RideSchema = new mongoose.Schema({
     required: true,
   },
   rideDepartureTime: {
-    type: Date,
+    type: String,
     required: true,
   },
   rideReturnTime: {
-    type: Date,
+    type: String,
     required: true,
   },
   cost: {

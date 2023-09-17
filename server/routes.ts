@@ -64,12 +64,11 @@ router.post("/createRide", (req, res) => {
 
 console.log(JSON.stringify(newRide))
 
-res.json('ride done')
 
-// newRide.save()
-//     .then(() => res.json('Ride created!'))
-//     // @ts-ignore
-//     .catch((err) => res.status(400).json('Error: ' + err));
+newRide.save()
+    .then(() => res.json('Ride created!'))
+    // @ts-ignore
+    .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 export default router;
