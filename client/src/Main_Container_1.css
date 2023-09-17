@@ -2,56 +2,51 @@
 
 /* Section container styles */
 .main-container-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15%;
-    background-color: #064e3b;
-    height: 20vh; /* Center the content vertically in the viewport */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
+  background-color: #064e3b;
+  height: 20vh; /* Center the content vertically in the viewport */
+}
 
-  
-  /* Centered content container styles */
-  .centered-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column; /* Stack elements in a column */
-    align-items: center; /* Center items horizontally */
-  }
+/* Centered content container styles */
+.centered-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack elements in a column */
+  align-items: center; /* Center items horizontally */
+}
 
-  /* Search hook styles */
-  .search-hook {
-    color:#FFFFFA;
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  /* Search bar styles */
-  .search-bar {
-    background-color: #FFFFFA;
-    color:#0D5C63;
-    padding: 10px;
-    width: 300px;
-    font-size: 16px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px; /* Add spacing between the search bar and button */
-  }
-  
-  /* Start ride button styles */
-  .start-ride-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #FFFFFA;
-    color: #064e3b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Hover effect on the button */
-  .start-ride-button:hover {
-    background-color: #cdf5f8;
-  }
-  
+/* Search hook styles */
+.search-hook {
+  color: #fffffa;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* Search bar styles */
+.search-bar {
+  background-color: #fffffa;
+  color: #0d5c63;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* Start ride button styles */
+.start-ride-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fffffa;
+  color: #064e3b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect on the button */
+.start-ride-button:hover {
+  background-color: #cdf5f8;
+}
