@@ -50,11 +50,10 @@ router.get("/findRides", (req: Request, res: Response) => {
 
 router.get("/getUserRides", (req: Request, res: Response) => {
   // @ts-ignore
-  const search = req.body.search;
+  const search = req.query.search.toLowerCase();
   console.log(search);
   console.log("/getUserRides called");
   // @ts-ignore
-  const searchRegex = new RegExp(search, 'i');
   Ride.find({})
     .then((rides) => {
         const foundRides = rides;
@@ -62,16 +61,18 @@ router.get("/getUserRides", (req: Request, res: Response) => {
         foundRides.forEach((ride: any) => {
           // toReturn.push(ride.destination);
           // toReturn.push(ride);
-          if (searchRegex.test(ride.driver)) { // Use the regex object to test if the search value matches any substring of the properties
+          if (search === ride.driver.toLowerCase()) { // Use the regex object to test if the search value matches any substring of the properties
             toReturn.push(ride);
           }
         });
         res.json(toReturn);
+        console.log(toReturn);
     }) 
     .catch((err) => {
         console.error(err);
         res.status(500).send('An error occurred while trying to get rides specific to the user');
     });
+  
 })
 router.get("/getUsers", (req: Request, res: Response) => {
   User.find({})
