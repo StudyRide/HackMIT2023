@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 import { User } from "./db/models/User";
 import { Ride } from "./db/models/Ride";
 
+const cors = require('cors');
 const app: Application = express();
 const port = process.env.PORT || 4242;
-
+app.use(cors());
 const connString =
   "mongodb+srv://ebondare:eZWqUiDAyhltnqfC@studyride-cluster.c55hbb6.mongodb.net/";
 
@@ -31,7 +32,23 @@ app.get("/", (req: Request, res: Response) => {
   );
 });
 
+const items = [
+  {
+    name: "Laptop",
+    price: 500,
+  },
+  {
+    name: "Desktop",
+    price: 700,
+  },
+];
+
+app.get("/api/items", (req, res) => {
+  res.send(items);
+});
+
 app.get('/getRides', (req: Request, res: Response) => {
+  console.log("/getRides called")
   Ride.find({})
     .then((rides) => {
         res.json(rides);
