@@ -4,14 +4,14 @@ import { User } from "./db/models/User";
 import { Ride } from "./db/models/Ride";
 import router from "./routes";
 
-const cors = require('cors');
-var bodyParser = require('body-parser')
+const cors = require("cors");
+var bodyParser = require("body-parser");
 
 const app: Application = express();
 const port = process.env.PORT || 4242;
 
 app.use(cors());
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 const connString =
   "mongodb+srv://ebondare:eZWqUiDAyhltnqfC@studyride-cluster.c55hbb6.mongodb.net/";
