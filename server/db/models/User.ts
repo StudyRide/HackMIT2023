@@ -13,6 +13,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  password: {
+    type: String,
+    required: true
+  },
   confirmedRides: {
     type: [mongoose.Schema.Types.ObjectId],
   },
