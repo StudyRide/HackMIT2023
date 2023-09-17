@@ -15,8 +15,8 @@ const navigation = [
 ]
 
 const user = {
-  name: 'Mary Jane',
-  email: 'maryjane@example.com',
+  name: 'Kate',
+  email: 'kate@example.com',
   imageUrl: profilePic,
 }
 
