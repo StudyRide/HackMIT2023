@@ -10,7 +10,18 @@ const port = process.env.PORT || 8000;
 //   res.send("Welcome to Express & TypeScript Server");
 // });
 
-app.post("/create-user", (req: Request, res: Response) => {});
+app.post("/createUser", (req: Request, res: Response) => {
+  const newUser = new User({
+    name: req.body.name,
+    email: req.body.email,
+    phoneNumber: req.body.phoneNumber,
+    confirmedRides: []
+  });
+  newUser.save()
+    .then(() => res.json('User created!'))
+    // @ts-ignore
+    .catch((err) => res.status(400).json('Error: ' + err))
+});
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
