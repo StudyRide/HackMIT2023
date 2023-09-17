@@ -5,16 +5,18 @@ import Navbar from './Navbar';
 import RidesComponent from './RidesComponent'
 import Main_Container_1 from './Main_Container_1';
 
+import { Routes, Route } from 'react-router-dom';
+import Homepage from './Pages/Homepage';
+import DashboardPage from './Pages/DashboardPage';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Main_Container_1 />
-      <div className = "rides">
-        <RidesComponent/>
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/dashboard" element={<DashboardPage/>} />
+      </Routes>
+    </>
   );
 }
 
