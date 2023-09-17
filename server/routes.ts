@@ -20,6 +20,37 @@ router.get("/getRides", (req: Request, res: Response) => {
     });
 });
 
+router.get("/findRides", (req: Request, res: Response) => {
+  const search = req.body.search;
+  console.log(search);
+  console.log("/findRides called")
+  const searchRegex = new RegExp(search, 'i');
+  Ride.find({})
+    .then((rides) => {
+        const foundRides = rides;
+        let toReturn: any[] = [];
+        foundRides.forEach((ride: any) => {
+          // toReturn.push(ride.destination);
+          // toReturn.push(ride);
+          if (searchRegex.test(ride.destination) ||
+              searchRegex.test(ride.origin) ||
+              searchRegex.test(ride.driver)) { // Use the regex object to test if the search value matches any substring of the properties
+            toReturn.push(ride);
+          }
+        });
+        res.json(toReturn);
+    }) 
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('An error occurred while trying to get rides');
+    });
+    // console.log(foundRides)
+    //console.log(JSON.stringify(foundRides))
+});
+
+router.get("/getUserRides", (req: Request, res: Response) => {
+  // return list of rides of user 
+})
 router.get("/getUsers", (req: Request, res: Response) => {
   User.find({})
     .then((rides) => {
