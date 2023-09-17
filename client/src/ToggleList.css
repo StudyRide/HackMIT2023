@@ -1,0 +1,30 @@
+/* ToggleList.css */
+
+/* Toggle list container styles */
+.toggle-list {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    color: #0D5C63;
+    font-size: 24px;
+  }
+  
+  /* Toggle list title styles */
+  .toggle-list h3 {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  /* List item styles */
+  .toggle-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .toggle-list ul li {
+    margin-bottom: 10px;
+  }
+  

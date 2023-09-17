@@ -1,5 +1,10 @@
 /* ProfileInfo.css */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* Profile info container styles */
 .profile-info {
     display: flex;
@@ -16,7 +21,6 @@
     width: 200px; /* Adjust as needed */
     height: auto; /* Adjust as needed */
     border-radius: 50%; /* Make it round for a profile picture */
-    margin-right: 20px;
   }
   
   /* Profile details styles */
@@ -24,16 +28,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FFFFFA;
   }
-  
+
   .name {
     font-size: 34px;
+    color: #FFFFFA;
   }
-  
+
+  .wallet {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #FFFFFA;
+  }
+
+
   /* Offer ride button styles */
   .offer-ride-button {
     padding: 10px 20px;
+    margin-top: 30px;
     font-size: 16px;
     background-color: #FFFFFA;;
     color: #0D5C63;
