@@ -22,7 +22,7 @@
   /* Search hook styles */
   .search-hook {
     color:#FFFFFA;
-    font-size: 48px;
+    font-size: 50px;
     margin-bottom: 20px;
   }
   
@@ -42,6 +42,7 @@
   /* Start ride button styles */
   .start-ride-button {
     padding: 10px 20px;
+    margin: 5px;
     font-size: 16px;
     background-color: #FFFFFA;
     color: #064e3b;

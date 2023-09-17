@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import "./RideCard.css";
 
-function RideCard({ ride }) {
+function ConfirmedCard({ ride }) {
   return (
     <li className="flex justify-between gap-x-6 py-5">
       <div className="flex min-w-0 gap-x-4">
@@ -27,12 +27,7 @@ function RideCard({ ride }) {
           </p>
         </div>
       </div>
-      <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-        <div className="mt-1 flex items-center justify-center items-center gap-x-1.5">
-          <button className="confirm-ride">Request</button>
-        </div>
-      </div>
     </li>
   );
 }
-export default RideCard;
+export default ConfirmedCard;

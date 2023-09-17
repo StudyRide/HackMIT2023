@@ -7,3 +7,13 @@
     margin:0;
     padding:0;
 }
+
+.confirm-ride {
+    width: fit-content;
+    margin-top: 50%;
+    transform: translate(0, -50%);
+}
+
+.confirm-ride:hover {
+    background-color: #059669;
+  }

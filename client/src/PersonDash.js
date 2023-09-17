@@ -16,8 +16,7 @@ function PersonDash() {
       <ProfileInfo />
       <div className="rides-section">
         <div className="my-rides">
-          <ToggleList title="Future Rides" items={futureRides} />
-          <ToggleList title="History" items={history} />
+          <ToggleList title="My Rides" items={futureRides} />
         </div>
         <ToggleList title="Offered Rides" items={offeredRides} />
       </div>

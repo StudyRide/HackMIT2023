@@ -14,7 +14,6 @@ function Main_Container_1() {
         <input type="text" className="search-bar" placeholder="Search for a ride" />
         <button className="start-ride-button">Start</button>
       </div>
-      
     </div>
   );
 }
