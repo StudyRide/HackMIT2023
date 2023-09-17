@@ -18,7 +18,7 @@ function ProfileInfo() {
   };
 
   return (
-    <div className="profile-info bg-emerald-700">
+    <div className="profile-info bg-emerald-900">
       <img src={profilePic} alt="Profile" className="profile-picture" />
       <div className="profile-details">
         <h2 className="name">Mary Jane</h2>
