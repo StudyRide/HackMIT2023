@@ -6,7 +6,7 @@
     background-color: #0D5C63;
     justify-content: center;
     align-items: center;
-    padding: 15%;
+    padding: 10%;
     height: auto; /* Center the content vertically in the viewport */
   }
 
@@ -22,7 +22,8 @@
   /* Search hook styles */
   .search-hook {
     color:#FFFFFA;
-    font-size: 42px;
+    font-size: 48px;
+    margin-bottom: 20px;
   }
   
   /* Search bar styles */

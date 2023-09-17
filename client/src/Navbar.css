@@ -1,8 +1,11 @@
 /* Navbar.css */
-
+a{
+  text-decoration: none;
+  color:white;
+}
 /* Navbar container styles */
 .navbar {
-    background-color: #0D5C63;
+    background-color: #187a83;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -24,6 +27,7 @@
   
   .nav-links li {
     padding: 0;
+    list-style-type: none;
   }
   
   .nav-links a {

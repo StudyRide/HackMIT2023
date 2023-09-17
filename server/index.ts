@@ -2,14 +2,17 @@ import express, { Express, Request, Response, Application } from "express";
 import mongoose from "mongoose";
 import { User } from "./db/models/User";
 import { Ride } from "./db/models/Ride";
+import router from "./routes";
 
+const cors = require('cors');
 const app: Application = express();
 const port = process.env.PORT || 4242;
-
+app.use(cors());
 const connString =
   "mongodb+srv://ebondare:eZWqUiDAyhltnqfC@studyride-cluster.c55hbb6.mongodb.net/";
 
 //eZWqUiDAyhltnqfC
+<<<<<<< HEAD
 
 app.post("/createUser", (req: Request, res: Response) => {
   console.log(req.query);
@@ -72,6 +75,9 @@ app.post('/createRide', (req, res) => {
       .catch((err) => res.status(400).json('Error: ' + err));
 });
 
+=======
+app.use("/", router);
+>>>>>>> e977641b76d9bb29e66c5080d4e892a7c38c8df3
 
 const start = async () => {
   try {
@@ -84,19 +90,3 @@ const start = async () => {
 };
 
 start();
-
-// console.log(
-//   User.create({
-//     email: "hi@gmail.com",
-//     name: "thisIsAName",
-//     phoneNumber: "123.456.7890",
-//   }).then((res) => {
-//     res;
-//   }),
-
-//   User.find({})
-//     .exec()
-//     .then((res) => {
-//       console.log(res);
-//     })
-// );

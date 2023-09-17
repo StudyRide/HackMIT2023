@@ -1,7 +1,19 @@
-.person-dash {
+.rides-section {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start ;
+    margin-top: 60px;
+}
+
+
+
+.my-rides {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15%;
-    height: auto; /* Center the content vertically in the viewport */
-  }
+}
+
+
