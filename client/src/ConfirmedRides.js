@@ -5,9 +5,9 @@ import './RidesComponent.css';
 
 function ConfirmedRides(){
     const [rides, setRides] = useState([]);
-    let userName = "Daniel";
+    let userName = "kate";
     useEffect(() => {
-      fetch(`http://localhost:4242/getUserRides?search=${userName}`, {
+      fetch(`http://localhost:4242/getUserRides?search=kate`, {
         method: "GET",
         mode: "cors"
       })

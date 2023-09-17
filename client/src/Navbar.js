@@ -15,8 +15,8 @@ const navigation = [
 ]
 
 const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
+  name: 'Mary Jane',
+  email: 'maryjane@example.com',
   imageUrl: profilePic,
 }
 
@@ -97,10 +97,11 @@ function Navbar() {
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
                         <div>
-                          <Menu.Button className="relative flex w-42 items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                          <Menu.Button className="relative flex w-42 items-center rounded-full bg-emerald-900 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
                             <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                            <div className="text-base font-medium leading-none text-white px-10">{user.name}</div>
                           </Menu.Button>
                         </div>
                         <Transition
@@ -135,7 +136,7 @@ function Navbar() {
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-grey-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -174,14 +175,14 @@ function Navbar() {
                       <div className="text-base font-medium leading-none text-white">{user.name}</div>
                       <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                     </div>
-                    <button
+                    {/* <button
                       type="button"
                       className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     >
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
-                    </button>
+                    </button> */}
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
