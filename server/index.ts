@@ -49,7 +49,7 @@ app.get('/getUsers', (req: Request, res: Response) => {
     })
     .catch((err) => {
         console.error(err);
-        res.status(500).send('An error occurred while trying to get userss');
+        res.status(500).send('An error occurred while trying to get users');
     });
 })
 
