@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Main_Container_1 />
+      <PersonDash />
       <div className = "rides">
         <RidesComponent/>
       </div>
