@@ -49,7 +49,29 @@ router.get("/findRides", (req: Request, res: Response) => {
 });
 
 router.get("/getUserRides", (req: Request, res: Response) => {
-  // return list of rides of user 
+  // @ts-ignore
+  const search = req.body.search;
+  console.log(search);
+  console.log("/getUserRides called");
+  // @ts-ignore
+  const searchRegex = new RegExp(search, 'i');
+  Ride.find({})
+    .then((rides) => {
+        const foundRides = rides;
+        let toReturn: any[] = [];
+        foundRides.forEach((ride: any) => {
+          // toReturn.push(ride.destination);
+          // toReturn.push(ride);
+          if (searchRegex.test(ride.driver)) { // Use the regex object to test if the search value matches any substring of the properties
+            toReturn.push(ride);
+          }
+        });
+        res.json(toReturn);
+    }) 
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('An error occurred while trying to get rides specific to the user');
+    });
 })
 router.get("/getUsers", (req: Request, res: Response) => {
   User.find({})
@@ -64,13 +86,20 @@ router.get("/getUsers", (req: Request, res: Response) => {
 
 router.post("/createUser", (req: Request, res: Response) => {
   const data = req.body;
-
+  const toAddRides = [
+    {"driver":"kate","capacity":3,
+    "origin":"new york","destination":"boston","timeOfCreation":"2023-09-17T03:34:24.826Z",
+    "rideDepartureTime":"Sat Jan 01 2000 00:00:00 GMT-0500 (Eastern Standard Time)",
+    "rideReturnTime":"Sat Jan 01 2000 00:00:00 GMT-0500 (Eastern Standard Time)",
+    "cost":5,"requests":[],"__v":0},
+    {"driver":"Testing","capacity":2,"origin":"Boston","destination":"Knoxville","timeOfCreation":"2023-09-17T12:51:29.278Z","rideDepartureTime":"10:51","rideReturnTime":"00:51","cost":25,"requests":[],"__v":0}
+  ]
   const newUser = new User({
     name: data.name,
     email: data.email,
     phoneNumber: data.phoneNumber,
     password: data.password,
-    confirmedRides: []
+    confirmedRides: toAddRides
   });
   newUser.save()
     .then(() => res.json('User created!'))
