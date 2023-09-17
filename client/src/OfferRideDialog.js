@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 function OfferRideDialog({ isOpen, onClose }) {
+  const [user, setUser] = useState("");
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [depTime, setDepTime] = useState("");
@@ -14,6 +15,12 @@ function OfferRideDialog({ isOpen, onClose }) {
   // const fields = ["Origin, Destination, Departure Time, Return Time, Cost, Capacity"]
 
   const fields = [
+    {
+      name: "Name*",
+      value: user,
+      updateInput: setUser,
+      type: "text"
+    },
     {
       name: "Origin*",
       value: origin,
@@ -68,7 +75,7 @@ function OfferRideDialog({ isOpen, onClose }) {
     };
 
     const data = {
-      driver: "Testing",
+      driver: user,
       capacity: capacity,
       origin: origin,
       destination: destination,
