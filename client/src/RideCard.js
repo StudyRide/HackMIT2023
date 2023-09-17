@@ -13,17 +13,19 @@ function RideCard({ ride }) {
           alt=""
         />
         <div className="min-w-0 flex-auto text-left">
-          <p className="text-sm font-semibold leading-6 text-gray-900">
+          <p className="text-lg font-bold leading-6 text-gray-900">
             {ride.driver}
           </p>
           <p className="text-sm font-semibold leading-6 text-gray-900">
             {ride.origin} to {ride.destination}
           </p>
           <p className="text-sm leading-6 text-gray-900">
-            <span className="italic">Departure: </span> <span className="font-semibold">{ride.rideDepartureTime}</span>
+            <span className="italic">Departure: </span>{" "}
+            <span className="font-semibold">{ride.rideDepartureTime}</span>
           </p>
           <p className="text-sm leading-6 text-gray-900">
-          <span className="italic">Return: :</span> <span className="font-semibold">{ride.rideReturnTime}</span>
+            <span className="italic">Return: :</span>{" "}
+            <span className="font-semibold">{ride.rideReturnTime}</span>
           </p>
         </div>
       </div>
