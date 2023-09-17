@@ -32,12 +32,13 @@ router.get("/getUsers", (req: Request, res: Response) => {
 })
 
 router.post("/createUser", (req: Request, res: Response) => {
-  console.log(req.query);
+  const data = req.body;
+
   const newUser = new User({
-    name: req.query.name,
-    email: req.query.email,
-    phoneNumber: req.query.phoneNumber,
-    password: req.query.password,
+    name: data.name,
+    email: data.email,
+    phoneNumber: data.phoneNumber,
+    password: data.password,
     confirmedRides: []
   });
   newUser.save()
@@ -47,21 +48,28 @@ router.post("/createUser", (req: Request, res: Response) => {
 });
 
 router.post("/createRide", (req, res) => {
+  const data = req.body;
+
   const newRide = new Ride({
-    driver: req.query.driver,
-    capacity: req.query.capacity,
-    origin: req.query.origin,
-    destination: req.query.destination,
+    driver: data.driver,
+    capacity: data.capacity,
+    origin: data.origin,
+    destination: data.destination,
     timeOfCreation: new Date(),
-    rideDepartureTime: req.query.rideDepartureTime,
-    rideReturnTime: req.query.rideReturnTime,
-    cost: req.query.cost,
+    rideDepartureTime: data.rideDepartureTime,
+    rideReturnTime: data.rideReturnTime,
+    cost: data.cost,
     requests: []
 });
-newRide.save()
-    .then(() => res.json('Ride created!'))
-    // @ts-ignore
-    .catch((err) => res.status(400).json('Error: ' + err));
+
+console.log(JSON.stringify(newRide))
+
+res.json('ride done')
+
+// newRide.save()
+//     .then(() => res.json('Ride created!'))
+//     // @ts-ignore
+//     .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 export default router;
